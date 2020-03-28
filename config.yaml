@@ -1,0 +1,16 @@
+auto_cleaner:
+  - name: 'Remove servers which are not updated last 3 days'
+    dbname: telegraf
+    field: server
+    retention: 3d
+    filter:
+      service: service_A
+      environment: env_A
+
+  - name: 'Remove services which are not updated last 3 days'
+    dbname: 'telegraf'
+    field: 'service'
+    retention: '3d'
+    filter:
+      service: 'service_A'
+      environment: 'env_A'
